@@ -3,23 +3,26 @@
 #include "src/include/Player.h"
 #include <string>
 
-TEST(PlayerTest, GetSetName) {
-    Player player;
+TEST(PlayerTest, GetName) {
     std::string testName("Pera");
-    player.setName("Pera");
+    Player player(testName, Player::Color::RED);
     ASSERT_EQ(player.getName(), testName);
 }
 
 TEST(PlayerTest, GetSetScore) {
-    Player player;
+    Player player("", Player::Color::BLUE);
     constexpr unsigned int testScore = 5;
     player.setScore(testScore);
     ASSERT_EQ(player.getScore(), testScore);
 }
 
 TEST(PlayerTest, GetSetColor) {
-    Player player;
-    constexpr Player::Color testColor = Player::Color::RED;
-    player.setColor(testColor);
+    constexpr Player::Color testColor = Player::Color::GREEN;
+    Player player("", testColor);
     ASSERT_EQ(player.getColor(), testColor);
+}
+
+TEST(PlayerTest, NameColorConstructor)
+{
+
 }

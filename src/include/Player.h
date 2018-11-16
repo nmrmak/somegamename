@@ -4,6 +4,7 @@
 
 class Player {
 public:
+
     enum class Color {
         BLUE = 0x4285f4,
         RED = 0xea4335,
@@ -13,20 +14,19 @@ public:
     };
 
 private:
+
     std::string name;
     unsigned int score;
     Color color;
 public:
+    Player() = delete;
+    Player(const std::string &name, Color color);
     Color getColor() const;
 
-    void setColor(Color color);
-
-public:
     unsigned int getScore() const;
     void setScore(unsigned int score);
 
     const std::string &getName() const;
-    void setName(const std::string &name);
 };
 
 
