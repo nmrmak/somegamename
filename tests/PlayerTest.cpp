@@ -9,3 +9,10 @@ TEST(PlayerTest, GetSetName) {
     player.setName("Pera");
     ASSERT_EQ(player.getName(), testName);
 }
+
+TEST(PlayerTest, GetSetScore) {
+    Player player;
+    constexpr unsigned int testScore = 5;
+    player.setScore(testScore);
+    ASSERT_EQ(player.getScore(), testScore);
+}

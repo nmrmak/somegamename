@@ -6,6 +6,12 @@ class Player {
 
 private:
     std::string name;
+    unsigned int score;
+public:
+    unsigned int getScore() const;
+
+    void setScore(unsigned int score);
+
 public:
     const std::string &getName() const;
 
