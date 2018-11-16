@@ -9,7 +9,8 @@ add_subdirectory(${gtest_SOURCE_DIR})
 include_directories(${gtest_SOURCE_DIR}/googletest/include)
 include_directories(${gtest_SOURCE_DIR}/googlemock/include)
 
-add_executable(funwithkrle main.cpp tests/GameServerTest.cpp)
+add_executable(funwithkrle_test main_test.cpp tests/GameServerTest.cpp)
+add_executable(funwithkrle main.cpp)
 
-target_link_libraries(funwithkrle gtest gtest_main)
-target_link_libraries(funwithkrle gmock gmock_main)
+target_link_libraries(funwithkrle GL GLU glut)
+target_link_libraries(funwithkrle_test gtest_main gmock gmock_main)
