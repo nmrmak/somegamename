@@ -15,3 +15,11 @@ unsigned int Player::getScore() const {
 void Player::setScore(unsigned int score) {
     Player::score = score;
 }
+
+Player::Color Player::getColor() const {
+    return color;
+}
+
+void Player::setColor(Player::Color color) {
+    Player::color = color;
+}

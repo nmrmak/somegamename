@@ -16,3 +16,10 @@ TEST(PlayerTest, GetSetScore) {
     player.setScore(testScore);
     ASSERT_EQ(player.getScore(), testScore);
 }
+
+TEST(PlayerTest, GetSetColor) {
+    Player player;
+    constexpr Player::Color testColor = Player::Color::RED;
+    player.setColor(testColor);
+    ASSERT_EQ(player.getColor(), testColor);
+}
