@@ -13,8 +13,25 @@ public:
         VIOLET = 0x673ab7
     };
 
-private:
+    class Position {
+    public:
+        Position(int newX, int newY) : x(newX), y(newY) {}
+        Position() = default;
+        int x;
+        int y;
+    };
 
+    class Velocity {
+        int x;
+        int y;
+    };
+
+public:
+    const Position &getPosition() const;
+    void setPosition(const Position &position);
+
+private:
+    Position position;
     std::string name;
     unsigned int score;
     Color color;

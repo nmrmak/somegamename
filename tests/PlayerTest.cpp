@@ -22,7 +22,20 @@ TEST(PlayerTest, GetSetColor) {
     ASSERT_EQ(player.getColor(), testColor);
 }
 
+TEST(PlayerTest, GetSetPosition) {
+    Player player("", Player::Color::VIOLET);
+    constexpr unsigned int testX = 10;
+    constexpr unsigned int testY = 10;
+    player.setPosition(Player::Position(testX, testY));
+    ASSERT_EQ(player.getPosition().x, testX);
+    ASSERT_EQ(player.getPosition().y, testY);
+}
+
 TEST(PlayerTest, NameColorConstructor)
 {
-
+    const std::string testName = "TestName";
+    Player::Color testColor = Player::Color::YELLOW;
+    Player player(testName, testColor);
+    ASSERT_EQ(player.getColor(), testColor);
+    ASSERT_EQ(player.getName(), testName);
 }

@@ -18,3 +18,11 @@ Player::Color Player::getColor() const {
 
 Player::Player(const std::string &name, Player::Color color) : name(name), color(color), score(0)
 {}
+
+const Player::Position &Player::getPosition() const {
+    return position;
+}
+
+void Player::setPosition(const Player::Position &position) {
+    Player::position = position;
+}
