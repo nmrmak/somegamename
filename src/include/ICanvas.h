@@ -4,8 +4,8 @@
 #include "Position.h"
 
 class ICanvas {
-    virtual void drawPoint(float x, float y) = 0;
-    virtual void drawPoints(std::list<Position>) = 0;
+    virtual void drawPoint(float x, float y, float pointSize) = 0;
+    virtual void drawPoints(std::list<Position>, float pointSize) = 0;
 };
 
 

@@ -1,10 +1,13 @@
 #include <iostream>
 #include <gmock/gmock.h>
 
+#include <memory>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <GL/glut.h>
+#include "CCanvas.h"
+#include "CBattlefield.h"
 
 
 GLenum doubleBuffer;
@@ -111,6 +114,9 @@ int main(int argc, char **argv)
     glutCreateWindow("Igrica");
 
     Init();
+
+    std::shared_ptr<ICanvas> canvas(new CCanvas());
+    CBattlefield battlefield(canvas);
 
     glutReshapeFunc(Reshape);
     glutKeyboardFunc(Key);
