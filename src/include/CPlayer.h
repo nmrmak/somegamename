@@ -3,6 +3,7 @@
 #include <string>
 #include "IDrawable.h"
 #include "Position.h"
+#include "CVelocity.h"
 
 class CPlayer : public IDrawable{
 public:
@@ -18,6 +19,7 @@ public:
 
     CPlayer() = delete;
     CPlayer(const std::string &name, Color color);
+    CPlayer(const std::string &name, Color color, Position& position);
 
     const Position &getPosition() const;
     void setPosition(const Position &position);

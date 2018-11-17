@@ -4,7 +4,7 @@
 class Velocity {
 public:
     Velocity(float aAzimuth, float aSpeed) : azimuth(aAzimuth), speed(aSpeed) {}
-    Velocity() : azimuth(0), speed(1);
+    Velocity() : azimuth(0), speed(1) {};
     void steerLeft(float degrees);
     void steerRight(float degrees);
     float getX();
