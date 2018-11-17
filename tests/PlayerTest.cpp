@@ -31,6 +31,15 @@ TEST(PlayerTest, GetSetPosition) {
     ASSERT_EQ(player.getPosition().y, testY);
 }
 
+TEST(PlayerTest, GetSetVelocity) {
+    Player player("", Player::Color::VIOLET);
+    constexpr unsigned int testX = 10;
+    constexpr unsigned int testY = 10;
+    player.setVelocity(Player::Velocity(testX, testY));
+    ASSERT_EQ(player.getVelocity().x, testX);
+    ASSERT_EQ(player.getVelocity().y, testY);
+}
+
 TEST(PlayerTest, NameColorConstructor)
 {
     const std::string testName = "TestName";

@@ -22,28 +22,36 @@ public:
     };
 
     class Velocity {
+    public:
+        Velocity(int newX, int newY) : x(newX), y(newY) {}
+        Velocity() = default;
         int x;
         int y;
     };
 
 public:
+    Player() = delete;
+    Player(const std::string &name, Color color);
+
     const Position &getPosition() const;
     void setPosition(const Position &position);
 
-private:
-    Position position;
-    std::string name;
-    unsigned int score;
-    Color color;
-public:
-    Player() = delete;
-    Player(const std::string &name, Color color);
+    const Velocity &getVelocity() const;
+    void setVelocity(const Velocity &velocity);
+
     Color getColor() const;
+
+    const std::string &getName() const;
 
     unsigned int getScore() const;
     void setScore(unsigned int score);
 
-    const std::string &getName() const;
+private:
+    Position position;
+    Velocity velocity;
+    std::string name;
+    unsigned int score;
+    Color color;
 };
 
 

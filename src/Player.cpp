@@ -26,3 +26,11 @@ const Player::Position &Player::getPosition() const {
 void Player::setPosition(const Player::Position &position) {
     Player::position = position;
 }
+
+const Player::Velocity &Player::getVelocity() const {
+    return velocity;
+}
+
+void Player::setVelocity(const Player::Velocity &velocity) {
+    Player::velocity = velocity;
+}
