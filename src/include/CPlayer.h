@@ -16,14 +16,6 @@ public:
     };
 
 
-    class Velocity {
-    public:
-        Velocity(int newX, int newY) : x(newX), y(newY) {}
-        Velocity() = default;
-        int x;
-        int y;
-    };
-
     CPlayer() = delete;
     CPlayer(const std::string &name, Color color);
 

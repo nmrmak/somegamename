@@ -7,6 +7,7 @@ class ICanvas {
 public:
     virtual void drawPoint(float x, float y, float pointSize) = 0;
     virtual void drawPoints(std::list<Position>, float pointSize) = 0;
+    virtual void setRedrawFunction(void(*redrawFn)(void)) = 0;
 };
 
 

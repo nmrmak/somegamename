@@ -106,10 +106,12 @@ int main(int argc, char **argv)
     Init();
 
     std::shared_ptr<ICanvas> canvas(new CCanvas());
+    canvas->setRedrawFunction(Draw);
     CBattlefield battlefield(canvas);
     pBattlefield = std::make_unique<CBattlefield>(battlefield);
     CPlayer player("Pera", CPlayer::Color::RED);
     pPlayer = std::make_shared<CPlayer>(player);
+
 
     pBattlefield->addDrawable(pPlayer);
 

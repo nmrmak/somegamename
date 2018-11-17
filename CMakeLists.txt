@@ -11,7 +11,7 @@ include_directories(${gtest_SOURCE_DIR}/googletest/include)
 include_directories(${gtest_SOURCE_DIR}/googlemock/include)
 include_directories(${project_ROOT_DIR}/src/include)
 
-add_executable(funwithkrle src/main.cpp src/CPlayer.cpp src/include/CPlayer.h src/include/IDrawable.h src/include/ICanvas.h src/include/Position.h src/CBattlefield.cpp src/include/CBattlefield.h src/CCanvas.cpp src/CCanvas.h)
+add_executable(funwithkrle src/main.cpp src/CPlayer.cpp src/include/CPlayer.h src/include/IDrawable.h src/include/ICanvas.h src/include/Position.h src/CBattlefield.cpp src/include/CBattlefield.h src/CCanvas.cpp src/include/CCanvas.h src/include/CVelocity.h src/CVelocity.cpp)
 add_library(funwithkrle_lib src/main.cpp src/CPlayer.cpp src/include/CPlayer.h)
 target_link_libraries(funwithkrle GL GLU glut)
 
