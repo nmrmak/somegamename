@@ -4,7 +4,7 @@
 #include "IDrawable.h"
 #include "Position.h"
 
-class CPlayer : IDrawable{
+class CPlayer : public IDrawable{
 public:
 
     enum class Color {

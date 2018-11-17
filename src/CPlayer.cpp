@@ -1,5 +1,6 @@
 #include <ICanvas.h>
 #include <memory>
+#include <iostream>
 #include "include/CPlayer.h"
 
 const std::string &CPlayer::getName() const {
@@ -39,6 +40,7 @@ void CPlayer::setVelocity(const CPlayer::Velocity &velocity) {
 
 void CPlayer::draw(std::shared_ptr<ICanvas> &canvas)
 {
+    std::cout << "Inside CPlayer draw" << std::endl << std::flush;
     constexpr float pointSize(5);
     canvas->drawPoint(position.x, position.y, pointSize);
 }

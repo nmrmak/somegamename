@@ -1,6 +1,7 @@
 #ifndef FUNWITHKRLE_IDRAWABLE_H
 #define FUNWITHKRLE_IDRAWABLE_H
 
+#include "ICanvas.h"
 
 class IDrawable {
 public:

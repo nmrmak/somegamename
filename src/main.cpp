@@ -6,12 +6,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <GL/glut.h>
+#include <CPlayer.h>
 #include "CCanvas.h"
 #include "CBattlefield.h"
 
 
 GLenum doubleBuffer;
 std::unique_ptr<CBattlefield> pBattlefield = nullptr;
+std::shared_ptr<CPlayer> pPlayer = nullptr;
 
 
 static void Init(void)
@@ -32,19 +34,25 @@ static void Reshape(int width, int height)
 
 static void Key(unsigned char key, int x, int y)
 {
-
+    Position position = pPlayer->getPosition();
     switch (key) {
         case '1':
-            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-            glutPostRedisplay();
+            position.x -= 0.01;
             break;
         case '2':
-            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-            glutPostRedisplay();
+            position.x += 0.01;
+            break;
+        case '8':
+            position.y -= 0.01;
+            break;
+        case '9':
+            position.y += 0.01;
             break;
         case 27:
             exit(0);
     }
+    pPlayer->setPosition(position);
+    glutPostRedisplay();
 }
 
 static void Draw(void)
@@ -55,6 +63,7 @@ static void Draw(void)
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glPushMatrix();
 
+    std::cout << "Inside main Draw" << std::endl <<std::flush;
     pBattlefield->draw();
 
     glPopMatrix();
@@ -99,7 +108,10 @@ int main(int argc, char **argv)
     std::shared_ptr<ICanvas> canvas(new CCanvas());
     CBattlefield battlefield(canvas);
     pBattlefield = std::make_unique<CBattlefield>(battlefield);
-    CPlayer player;
+    CPlayer player("Pera", CPlayer::Color::RED);
+    pPlayer = std::make_shared<CPlayer>(player);
+
+    pBattlefield->addDrawable(pPlayer);
 
     glutReshapeFunc(Reshape);
     glutKeyboardFunc(Key);

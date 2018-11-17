@@ -26,7 +26,7 @@ TEST(PlayerTest, GetSetPosition) {
     CPlayer player("", CPlayer::Color::VIOLET);
     constexpr unsigned int testX = 10;
     constexpr unsigned int testY = 10;
-    player.setPosition(CPlayer::Position(testX, testY));
+    player.setPosition(Position(testX, testY));
     ASSERT_EQ(player.getPosition().x, testX);
     ASSERT_EQ(player.getPosition().y, testY);
 }
