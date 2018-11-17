@@ -4,7 +4,7 @@
 #include "IDrawable.h"
 #include "Position.h"
 
-class Player : IDrawable{
+class CPlayer : IDrawable{
 public:
 
     enum class Color {
@@ -24,8 +24,8 @@ public:
         int y;
     };
 
-    Player() = delete;
-    Player(const std::string &name, Color color);
+    CPlayer() = delete;
+    CPlayer(const std::string &name, Color color);
 
     const Position &getPosition() const;
     void setPosition(const Position &position);

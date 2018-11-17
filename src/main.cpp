@@ -99,7 +99,7 @@ int main(int argc, char **argv)
     std::shared_ptr<ICanvas> canvas(new CCanvas());
     CBattlefield battlefield(canvas);
     pBattlefield = std::make_unique<CBattlefield>(battlefield);
-    
+    CPlayer player;
 
     glutReshapeFunc(Reshape);
     glutKeyboardFunc(Key);

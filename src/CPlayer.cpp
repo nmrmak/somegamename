@@ -2,42 +2,42 @@
 #include <memory>
 #include "include/CPlayer.h"
 
-const std::string &Player::getName() const {
+const std::string &CPlayer::getName() const {
     return name;
 }
 
-unsigned int Player::getScore() const {
+unsigned int CPlayer::getScore() const {
     return score;
 }
 
-void Player::setScore(unsigned int score) {
-    Player::score = score;
+void CPlayer::setScore(unsigned int score) {
+    CPlayer::score = score;
 }
 
-Player::Color Player::getColor() const {
+CPlayer::Color CPlayer::getColor() const {
     return color;
 }
 
-Player::Player(const std::string &name, Player::Color color) : name(name), color(color), score(0)
+CPlayer::CPlayer(const std::string &name, CPlayer::Color color) : name(name), color(color), score(0)
 {}
 
-const Position &Player::getPosition() const {
+const Position &CPlayer::getPosition() const {
     return position;
 }
 
-void Player::setPosition(const Position &position) {
-    Player::position = position;
+void CPlayer::setPosition(const Position &position) {
+    CPlayer::position = position;
 }
 
-const Player::Velocity &Player::getVelocity() const {
+const CPlayer::Velocity &CPlayer::getVelocity() const {
     return velocity;
 }
 
-void Player::setVelocity(const Player::Velocity &velocity) {
-    Player::velocity = velocity;
+void CPlayer::setVelocity(const CPlayer::Velocity &velocity) {
+    CPlayer::velocity = velocity;
 }
 
-void Player::draw(std::shared_ptr<ICanvas> &canvas)
+void CPlayer::draw(std::shared_ptr<ICanvas> &canvas)
 {
     constexpr float pointSize(5);
     canvas->drawPoint(position.x, position.y, pointSize);
