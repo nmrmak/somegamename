@@ -119,8 +119,3 @@ int main(int argc, char **argv)
     glutDisplayFunc(Draw);
     glutMainLoop();
 }
-//
-//int main(int argc, char** argv) {
-//    ::testing::InitGoogleMock(&argc, argv);
-//    return RUN_ALL_TESTS();
-//}
