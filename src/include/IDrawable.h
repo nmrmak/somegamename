@@ -4,7 +4,7 @@
 
 class IDrawable {
 public:
-    virtual void draw() = 0;
+    virtual void draw(std::shared_ptr<ICanvas> &canvas) = 0;
 };
 
 

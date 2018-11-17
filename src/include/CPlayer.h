@@ -40,7 +40,7 @@ public:
     unsigned int getScore() const;
     void setScore(unsigned int score);
 
-    void draw() override;
+    void draw(std::shared_ptr<ICanvas> &canvas) override;
 
 private:
     Position position;

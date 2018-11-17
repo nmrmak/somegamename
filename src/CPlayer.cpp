@@ -1,3 +1,5 @@
+#include <ICanvas.h>
+#include <memory>
 #include "include/CPlayer.h"
 
 const std::string &Player::getName() const {
@@ -35,7 +37,8 @@ void Player::setVelocity(const Player::Velocity &velocity) {
     Player::velocity = velocity;
 }
 
-void Player::draw()
+void Player::draw(std::shared_ptr<ICanvas> &canvas)
 {
-
+    constexpr float pointSize(5);
+    canvas->drawPoint(position.x, position.y, pointSize);
 }

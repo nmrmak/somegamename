@@ -11,24 +11,12 @@
 
 
 GLenum doubleBuffer;
-GLint thing1, thing2;
+std::unique_ptr<CBattlefield> pBattlefield = nullptr;
 
 
 static void Init(void)
 {
 
-    glClearColor(0.0, 0.0, 0.0, 0.0);
-    glClearAccum(0.0, 0.0, 0.0, 0.0);
-
-    thing1 = glGenLists(1);
-    glNewList(thing1, GL_COMPILE);
-    glPointSize(10.0);
-    glBegin(GL_POINTS);
-    glVertex2f(0.0, 0.0);
-    glEnd();
-    //    glColor3f(1.0, 0.0, 0.0);
-    //    glRectf(-0.1, -0.1, 0, 0.0);
-    glEndList();
 }
 
 static void Reshape(int width, int height)
@@ -62,19 +50,12 @@ static void Key(unsigned char key, int x, int y)
 static void Draw(void)
 {
 
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClearAccum(0.0, 0.0, 0.0, 0.0);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glPushMatrix();
 
-    glScalef(0.8, 0.8, 1.0);
-
-    glClear(GL_COLOR_BUFFER_BIT);
-    glCallList(thing1);
-    glAccum(GL_LOAD, 0.5);
-
-    glClear(GL_COLOR_BUFFER_BIT);
-    glCallList(thing2);
-    glAccum(GL_ACCUM, 0.5);
-
-    glAccum(GL_RETURN, 1.0);
+    pBattlefield->draw();
 
     glPopMatrix();
 
@@ -117,6 +98,8 @@ int main(int argc, char **argv)
 
     std::shared_ptr<ICanvas> canvas(new CCanvas());
     CBattlefield battlefield(canvas);
+    pBattlefield = std::make_unique<CBattlefield>(battlefield);
+    
 
     glutReshapeFunc(Reshape);
     glutKeyboardFunc(Key);
