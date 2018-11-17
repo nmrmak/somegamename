@@ -1,8 +1,10 @@
 #ifndef FUNWITHKRLE_PLAYER_H
 #define FUNWITHKRLE_PLAYER_H
 #include <string>
+#include "IDrawable.h"
+#include "Position.h"
 
-class Player {
+class Player : IDrawable{
 public:
 
     enum class Color {
@@ -13,13 +15,6 @@ public:
         VIOLET = 0x673ab7
     };
 
-    class Position {
-    public:
-        Position(int newX, int newY) : x(newX), y(newY) {}
-        Position() = default;
-        int x;
-        int y;
-    };
 
     class Velocity {
     public:
@@ -29,7 +24,6 @@ public:
         int y;
     };
 
-public:
     Player() = delete;
     Player(const std::string &name, Color color);
 
@@ -45,6 +39,8 @@ public:
 
     unsigned int getScore() const;
     void setScore(unsigned int score);
+
+    void draw() override;
 
 private:
     Position position;

@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "src/include/Player.h"
+#include "src/include/CPlayer.h"
 #include <string>
 
 TEST(PlayerTest, GetName) {

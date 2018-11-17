@@ -1,4 +1,4 @@
-#include "include/Player.h"
+#include "include/CPlayer.h"
 
 const std::string &Player::getName() const {
     return name;
@@ -19,11 +19,11 @@ Player::Color Player::getColor() const {
 Player::Player(const std::string &name, Player::Color color) : name(name), color(color), score(0)
 {}
 
-const Player::Position &Player::getPosition() const {
+const Position &Player::getPosition() const {
     return position;
 }
 
-void Player::setPosition(const Player::Position &position) {
+void Player::setPosition(const Position &position) {
     Player::position = position;
 }
 
@@ -33,4 +33,9 @@ const Player::Velocity &Player::getVelocity() const {
 
 void Player::setVelocity(const Player::Velocity &velocity) {
     Player::velocity = velocity;
+}
+
+void Player::draw()
+{
+
 }

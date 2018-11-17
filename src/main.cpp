@@ -19,14 +19,12 @@ static void Init(void)
 
     thing1 = glGenLists(1);
     glNewList(thing1, GL_COMPILE);
-    glColor3f(1.0, 0.0, 0.0);
-    glRectf(-1.0, -1.0, 1.0, 0.0);
-    glEndList();
-
-    thing2 = glGenLists(1);
-    glNewList(thing2, GL_COMPILE);
-    glColor3f(0.0, 1.0, 0.0);
-    glRectf(0.0, -1.0, 1.0, 1.0);
+    glPointSize(10.0);
+    glBegin(GL_POINTS);
+    glVertex2f(0.0, 0.0);
+    glEnd();
+    //    glColor3f(1.0, 0.0, 0.0);
+    //    glRectf(-0.1, -0.1, 0, 0.0);
     glEndList();
 }
 
@@ -109,8 +107,8 @@ int main(int argc, char **argv)
     type = GLUT_RGB | GLUT_ACCUM;
     type |= (doubleBuffer) ? GLUT_DOUBLE : GLUT_SINGLE;
     glutInitDisplayMode(type);
-    glutInitWindowSize(300, 300);
-    glutCreateWindow("Accum Test");
+    glutInitWindowSize(800, 800);
+    glutCreateWindow("Igrica");
 
     Init();
 
