@@ -36,6 +36,8 @@ public:
 
     void draw(std::shared_ptr<ICanvas> &canvas) override;
 
+    void advancePosition(int elapsedMs);
+
 private:
     Position position;
     Velocity velocity;

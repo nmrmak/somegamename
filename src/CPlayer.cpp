@@ -46,3 +46,8 @@ CPlayer::CPlayer(const std::string &name, CPlayer::Color color, Position &positi
 
 CPlayer::CPlayer(const std::string &name, CPlayer::Color color) : name(name), color(color), score(0)
 {}
+
+void CPlayer::advancePosition(int elapsedMs) {
+    position.x += velocity.getX(elapsedMs);
+    position.y += velocity.getY(elapsedMs);
+}

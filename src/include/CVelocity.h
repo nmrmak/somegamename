@@ -3,14 +3,14 @@
 
 class Velocity {
 public:
-    Velocity(float aAzimuth, float aSpeed) : azimuth(aAzimuth), speed(aSpeed) {}
-    Velocity() : azimuth(0), speed(1) {};
+    Velocity(float aAngle, float aSpeed) : angle(aAngle), speed(aSpeed) {}
+    Velocity() : angle(0), speed(1) {};
     void steerLeft(float degrees);
     void steerRight(float degrees);
-    float getX();
-    float getY();
+    float getX(int elapsedMs);
+    float getY(int elapsedMs);
 private:
-    float azimuth;
+    float angle;
     float speed;
 };
 
